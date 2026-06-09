@@ -1,0 +1,85 @@
+/* It is most commonly used to define CSS variables (custom properties) that you can use throughout your entire webpage. */
+/* " -- " Means variable name */
+:root{
+    --card-radius:12px;
+    --shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+/* The * (universal selector) in CSS is used to select every element on the webpage — no matter what it is (<p>, <div>, <h1>, <img>, etc.). */
+/* The * selector means “select everything on the page.” */
+/* box-sizing: content-box; Default. Width = content only (padding and border add extra size). */
+/* Box-sizing:border-box Width includes content, padding, and border. Easier to control total size. */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color:white;
+    color:black;
+}
+header{
+    background-color:cornflowerblue;
+    text-align: center;
+    padding:40px 20px;
+    color:white;
+}
+/* rem (root element) is equal to 16 px */
+header h1{
+    font-size:2.5rem;
+}
+.palette-group{
+    background-color:white;
+    border-radius:var(--card-radius);
+    box-shadow: var(--shadow);
+    padding:20px 10px;
+    justify-content: center;
+}
+.palette-group h2{
+    margin-bottom:15px;
+    text-align:center;
+}
+.palette-container{
+    display:grid;
+    gap:50px;
+    padding:40px 20px;
+
+}
+.color-box{
+    background-color:var(--clr);
+    color:white;
+    padding:40px 10px;
+    border-radius:var(--card-radius);
+    width:15%;
+    text-align:center;
+    font-weight:bold;
+    box-shadow:var(--shadow);
+    /* transition: property duration timing-function delay; */
+    /* ease	
+Starts slow, speeds up, then slows down (default)
+linear	
+Same speed from start to end
+ease-in	
+Starts slow, then speeds up
+ease-out
+Starts fast, then slows down
+ease-in-out	
+Slow at both start and end */
+    transition:transform 0.5s ease-out;
+}
+.color-box:hover{
+    transform:scale(1.05);
+}
+.color-grid{
+    display:flex;
+    grid-template-columns: repeat(auto-fit,minmax (120px,1fr));
+    gap:15px;
+    justify-content:center;
+}
+footer{
+    text-align:center;
+    padding:20px;
+    background-color:cornflowerblue;
+    font-size:20px;
+    color:white;
+}
